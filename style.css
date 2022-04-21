@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap');
+
+:root {
+    --background-color: #1a1a1a;
+    --text-color: #f1f1f1;
+}
+
+*,*:before,*:after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+/* Scrollbar Firefox */
+*{
+  scrollbar-width: thin;
+  scrollbar-color: rgb(119, 119, 119) rgb(0, 0, 0);
+}
+
+/* Scrollbar Chrome, Edge, and Safari */
+*::-webkit-scrollbar{
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track{
+  background: rgb(0, 0, 0);
+}
+
+*::-webkit-scrollbar-thumb{
+  background-color: rgb(119, 119, 119);
+  border-radius: 20px;
+  border: 3px solid rgb(0, 0, 0);
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    font-family: 'Rajdhani', sans-serif;
+    position: relative;
+}
+
+body::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('Artboard-1.svg');/*Credits to all-free-download.com - Utilisation libre pour une utilisation non-commerciale*/
+    background-size: cover;
+    filter: grayscale();
+    opacity: 0.1;
+    z-index: -1;
+}
+
+a:hover{
+    opacity: 0.8;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    place-items: center start;
+    width: 100%;
+    position: fixed;
+    top:0;
+    right: 0;
+    left: 0;
+    transition: 1s ease;
+    background-color: #000000;
+    padding: 0px 20px;
+    z-index: 1;
+}
+
+nav.offsetNav{
+    background-color: #000000a8;
+    backdrop-filter: blur(10px);
+}
+
+nav h1{
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2em;
+    letter-spacing: 10px;
+    margin: 5px 0;
+}
+
+nav a{
+    display: flex;
+    text-decoration: none;
+    color: #fff;
+    letter-spacing: 5px;
+    width: fit-content;
+}
+
+nav svg{
+    width: 80px;
+}
+
+main{
+    margin-top: 100px;
+}
+
+#content-presentation{
+    display: flex;
+    flex-direction: column;
+    place-items: center center;
+}
+
+.image-day{
+    width: 80%;
+    height: 60vh;
+    margin: 15px 0;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 0px 25px -5px #000;
+}
+
+.image-day img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    cursor: zoom-in;
+}
+
+.image-main-info{
+    width: 80%;
+    padding: 10px 0px;
+    text-align: center;
+}
+
+.image-main-info h1{
+    font-family: 'Orbitron', sans-serif;
+}
+
+.image-main-info .date{
+    font-size: 1em;
+    padding: 5px 0px 15px 0px;
+}
+
+.image-details summary{
+    width: fit-content;
+    margin: auto;
+    font-size: 1.2em;
+    font-weight: bold;
+    letter-spacing: 5px;
+    color: #007eff;
+}
+
+.image-details summary:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.image-details .image-explanation{
+    text-align: justify;
+    padding: 35px 0px;
+}
+
+.image-details .author{
+    text-align: right;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+footer{
+    text-align: center;
+    padding: 20px;
+}
+
+footer a{
+    font-size: 0.8em;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fff;
+}
+
+.zommed-background{
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+    padding: 50px;
+    cursor: zoom-out;
+}
+
+.zommed-background img{
+    height: 100%;
+    max-width: 100vw;
+    object-fit: contain;
+}
+
+@media (max-width: 425px) {
+    .image-day{
+        height: 50vh;
+    }
+
+    .image-main-info{
+        width: 100%;
+        padding: 20px;
+    }
+}
