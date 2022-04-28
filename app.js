@@ -15,6 +15,7 @@ const getImages = async() => {
 
     const mainContent = document.querySelector('main');
     let imageHD = allImages.hdurl;
+    let imageSD = allImages.url;
     let author;
     if(allImages.copyright === undefined){
         author = 'Unknown author';
@@ -25,7 +26,7 @@ const getImages = async() => {
     mainContent.innerHTML = 
     `<section id="content-presentation">
         <div class="image-day">
-            <img src="${imageHD}" alt="${allImages.title}">
+            <img src="${imageSD}" alt="${allImages.title}">
         </div>
         <div class="image-main-info">
             <h1>${allImages.title}</h1>
@@ -38,7 +39,7 @@ const getImages = async() => {
         </div>
     </section>
     <div class="zommed-background">
-        <img src="${imageHD}" alt="${allImages.title}">
+        <img src="${imageSD}" alt="${allImages.title}">
     </div>`;
 
     const zoommedBackground = document.querySelector(".zommed-background");
