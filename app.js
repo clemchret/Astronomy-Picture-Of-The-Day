@@ -1,3 +1,4 @@
+//Ajout de classe sur le header de navigation au scroll
 window.addEventListener('scroll', function(){
     if(window.pageYOffset){
         document.querySelector('nav').classList.add('offsetNav');
@@ -6,15 +7,14 @@ window.addEventListener('scroll', function(){
     };
 });
 
+//Récupération des données de l'Api
 const getImages = async() => {
     //Récupération des données
     const response = await fetch('https://api.nasa.gov/planetary/apod?api_key=pklszhc1aO1M5pFtqg4IzqP4bbt1Bn8dqXLNU03h');
     //Attente de la réponse et sa conversion en json
     const allImages = await response.json();
     
-
-    const mainContent = document.querySelector('main');
-    let imageHD = allImages.hdurl;
+    //let imageHD = allImages.hdurl;
     let imageSD = allImages.url;
     let author;
     if(allImages.copyright === undefined){
@@ -23,6 +23,8 @@ const getImages = async() => {
         author = allImages.copyright;
     }
 
+    //Ajout de l'HTML avec les données retirées
+    const mainContent = document.querySelector('main');
     mainContent.innerHTML = 
     `<section id="content-presentation">
         <div class="image-day">
@@ -42,6 +44,7 @@ const getImages = async() => {
         <img src="${imageSD}" alt="${allImages.title}">
     </div>`;
 
+    //Fonction de zoom lors du clique sur l'image
     const zoommedBackground = document.querySelector(".zommed-background");
     const image = document.querySelector(".image-day");
 

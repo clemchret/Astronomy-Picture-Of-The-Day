@@ -1,0 +1,2 @@
+- taille titre mobile
+- favicon marche pas
