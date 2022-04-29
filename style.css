@@ -3,6 +3,7 @@
     font-family: 'Orbitron';
     font-style: normal;
     font-weight: 400;
+    font-display: swap;
     src: url('./fonts/orbitron-v23-latin-regular.eot'); /* IE9 Compat Modes */
     src: local(''),
          url('./fonts/orbitron-v23-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
@@ -17,6 +18,7 @@
     font-family: 'Rajdhani';
     font-style: normal;
     font-weight: 300;
+    font-display: swap;
     src: url('./fonts/rajdhani-v15-latin-300.eot'); /* IE9 Compat Modes */
     src: local(''),
          url('./fonts/rajdhani-v15-latin-300.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
